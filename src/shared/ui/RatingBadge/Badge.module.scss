@@ -1,0 +1,57 @@
+@use 'sass:color';
+$gold-color: #ffa500;
+$green-color: #006400;
+$red-color: #8b0000;
+$value: 90%;
+
+.badgeContainer {
+  border: 1px solid rgb(255, 255, 255, 0.5);
+  border-radius: 20%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  &.gold {
+    background-color: $gold-color;
+  }
+  &.green {
+    background-color: $green-color;
+  }
+  &.red {
+    background-color: $red-color;
+  }
+}
+.badgeRaiting {
+  font-size: 0.5em;
+  padding: 4px 4px;
+  margin: 0;
+  z-index: 2;
+  position: relative;
+  font-weight: bold;
+  &.gold {
+    color: color.scale($gold-color, $lightness: $value);
+  }
+  &.green {
+    color: color.scale($green-color, $lightness: $value);
+  }
+  &.red {
+    color: color.scale($red-color, $lightness: $value);
+  }
+}
+.badgeIco {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 1.7em;
+  width: 1.7em;
+  &.gold {
+    fill: var(--gold-color);
+  }
+  &.green {
+    fill: var(--green-color);
+  }
+  &.red {
+    fill: var(--red-color);
+  }
+}

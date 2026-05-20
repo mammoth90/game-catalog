@@ -1,0 +1,56 @@
+.container {
+  height: 400px;
+  padding-left: 1em;
+  padding-right: 1em;
+  position: relative;
+}
+.cardsBlock {
+  display: flex;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-bottom: 9px;
+  overflow-y: hidden;
+  width: 100%;
+  flex-direction: row;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  scrollbar-width: none;
+  gap: 1em;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.blockTitle {
+  font-size: 1.5rem;
+  padding-left: 20px;
+}
+.buttonLeft {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: 10;
+  transition: background-color 0.5s ease;
+  border-top-right-radius: 1em;
+  border-right: 1px solid rgb(255, 255, 255, 0.3);
+  border-bottom-right-radius: 1em;
+  &:hover {
+    background: rgb(255, 255, 255, 0.3);
+  }
+}
+.buttonRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid rgb(255, 255, 255, 0.3);
+  right: 0;
+  background-color: transparent;
+  z-index: 10;
+  transition: background-color 0.5s ease;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  &:hover {
+    background: rgb(255, 255, 255, 0.3);
+  }
+}
