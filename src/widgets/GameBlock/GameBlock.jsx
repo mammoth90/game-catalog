@@ -4,13 +4,17 @@ import styles from './GameBlock.module.scss'
 import GameCard from '../../entities/GameCard'
 import cn from 'classnames'
 import { useRef } from 'react'
+import Loading from '../../shared/ui/Loading'
+import Error from '../../shared/ui/Error'
 
 const GameBlock = ({ title, queryParams }) => {
-  const { data } = useGetGamesQuery({
+  const { data, isLoading, error } = useGetGamesQuery({
     ...queryParams,
   })
   const refEl = useRef(null)
   const games = data?.results ?? []
+  if (isLoading) return  <Loading />
+  if (error) return <Error />
 
   const cardsBlock = cn({
     [styles.cardsBlock]: true,

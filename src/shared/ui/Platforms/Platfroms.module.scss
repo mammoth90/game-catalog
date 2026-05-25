@@ -1,10 +1,15 @@
+@use 'sass:color';
+@use '../../styles/variables';
+$value: 20%;
+$icoLightnes: 80%;
+
 .container {
   padding-left: 10px;
   display: flex;
   gap: 4px;
 }
 .ico {
-  fill: white;
+  fill: color.scale(variables.$fontColor, $lightness: $icoLightnes);
   height: 15px;
   width: auto;
 }
@@ -30,7 +35,7 @@
   padding: 5px 10px;
   bottom: 1em;
   left: 0;
-  background-color: #808080;
+  background-color: color.scale(variables.$generalColor, $lightness: $value);
   border: 1px solid rgb(255, 255, 255, 0.2);
   border-radius: 0.5em;
   color: #ffff;

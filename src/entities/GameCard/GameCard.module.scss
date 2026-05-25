@@ -1,6 +1,10 @@
+@use 'sass:color';
+@use '../../shared/styles/variables';
+$value: 3%;
+
 .gameCard {
   margin-top: 5px;
-  background-color: #2e2d2d;
+  background-color: color.scale(variables.$generalColor, $lightness: $value);
   box-shadow: -1px 4px 8px 0px rgba(255, 255, 255, 0.3);
   border-radius: 15px;
   cursor: pointer;
@@ -11,17 +15,28 @@
   &:hover {
     box-shadow: -1px 4px 8px 0px rgba(255, 255, 255, 0.4);
   }
+  &:hover .cardImage {
+    filter: contrast(1);
+  }
+  &:hover(:not) {
+    filter: contrast(0);
+  }
 }
 .cardImage {
   width: 100%;
   height: 70%;
+  filter:  contrast(0.6) brightness(0.9);
   object-fit: cover;
   border-bottom: 1px solid rgb(255, 255, 255, 0.5);
+  transition: filter 0.5s ease;
 }
 .cardTitle {
   font-size: 0.9rem;
   padding-left: 10px;
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding-bottom: 4px;
 }
 .gameDetails {

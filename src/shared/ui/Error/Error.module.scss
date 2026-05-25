@@ -1,0 +1,21 @@
+@use '../../styles/variables';
+
+.errorContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ico {
+  fill: variables.$alert;
+  width: auto;
+  height: 40%;
+  opacity: 0.1;
+}
+.errorTittle {
+  color: variables.$alert;
+  font-weight: bold;
+  opacity: 0.3;
+}

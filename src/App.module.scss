@@ -1,27 +1,43 @@
+@use 'sass:color';
+@use '/src/shared/styles/variables';
+
 .mainContainer {
   display: grid;
-  background-color: #000000;
+  background-color: color.scale(variables.$generalColor, $lightness: -5%);
   grid-template-columns: 250px 1fr;
-  color: white;
   min-height: 100vh;
 }
 .sideMenu {
   display: grid;
-  grid-template-rows: 100px 1fr;
-  background: #000000;
-  background: linear-gradient(
-    175deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(36, 36, 36, 1) 40%
-  );
+  grid-template-rows: 150px 1fr;
+  position: relative;
+  z-index: 10;
+  // background: linear-gradient(
+  //   175deg,
+  //   rgba(0, 0, 0, 1) 0%,
+  //   rgba(36, 36, 36, 1) 40%
+  // );
   box-shadow: -4px 0px 10px 4px rgba(204, 204, 204, 0.2) inset;
   border-right: 1px solid rgba(189, 189, 189, 0.5);
+  background-color: #161C25;
+}
+.logoContainer {
+  margin: 10px 10px;
+  border-right: 1px solid rgb(255,255,255, 0.2);
+  border-bottom: 1px solid rgb(255,255,255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 }
 .logo {
+  max-width: 240px;
+  max-height: 90px;
+  z-index:0;
 }
 .main {
   display: grid;
-  grid-template-rows: 100px repeat(3, 450px);
+  grid-template-rows: 100px 1fr;
 }
 .searchForm {
 }

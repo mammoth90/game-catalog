@@ -1,61 +1,62 @@
 import ListOfPlatforms from './ListOfPlatforms'
 import styles from './Platfroms.module.scss'
-import playstation from './assets/playstation.svg'
-import xbox from './assets/xbox.svg'
-import nintendo from './assets/nintendo.svg'
-import android from './assets/android.svg'
-import mac from './assets/mac.svg'
-import linux from './assets/linux.svg'
-import pc from './assets/pc.svg'
-import sega from './assets/sega.svg'
+
+import  Playstation  from './assets/playstation.svg?react'
+import Xbox from './assets/xbox.svg?react'
+import Nintendo from './assets/nintendo.svg?react'
+import Android from './assets/android.svg?react'
+import Mac from './assets/mac.svg?react'
+import Linux from './assets/linux.svg?react'
+import Pc from './assets/pc.svg?react'
+import Sega from './assets/sega.svg?react'
 
 const platformsCollection = [
   {
     id: 1,
     keyWord: 'playstation',
-    icoSrc: playstation,
+    icoSrc: Playstation,
     family: 'playstation',
   },
   {
     id: 2,
     keyWord: 'xbox',
-    icoSrc: xbox,
+    icoSrc: Xbox,
     family: 'xbox',
   },
   {
     id: 3,
     keyWord: ['nintendo', 'wii'],
-    icoSrc: nintendo,
+    icoSrc: Nintendo,
     family: 'nintendo',
   },
   {
     id: 4,
     keyWord: 'android',
-    icoSrc: android,
+    icoSrc: Android,
     family: 'android',
   },
   {
     id: 5,
     keyWord: ['mac', 'ios'],
-    icoSrc: mac,
+    icoSrc: Mac,
     family: 'mac',
   },
   {
     id: 7,
     keyWord: 'linux',
-    icoSrc: linux,
+    icoSrc: Linux,
     family: 'linux',
   },
   {
     id: 8,
     keyWord: 'pc',
-    icoSrc: pc,
+    icoSrc: Pc,
     family: 'pc',
   },
   {
     id: 10,
     keyWord: ['dreamcast', 'gamecube'],
-    icoSrc: sega,
+    icoSrc: Sega,
     family: 'sega',
   },
 ]
@@ -89,9 +90,10 @@ const Platforms = ({ platforms }) => {
   return (
     <div className={styles.container}>
       {pl.map((i) => {
+        const Icon = i.icoSrc
         return (
           <div key={i.id} className={styles.icoDiv}>
-            <img className={styles.ico} key={i.id} src={i.icoSrc} />
+            <Icon className={styles.ico} key={i.id} />
             <ListOfPlatforms names={i.names} />
           </div>
         )
