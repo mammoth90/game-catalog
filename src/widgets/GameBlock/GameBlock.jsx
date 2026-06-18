@@ -1,20 +1,17 @@
 import { SlArrowLeft as Left, SlArrowRight as Right } from 'react-icons/sl'
-import { useGetGamesQuery } from '../../services/api/reducer.js'
 import styles from './GameBlock.module.scss'
-import GameCard from '../../entities/GameCard'
+import GameCard from '@/entities/GameCard'
 import cn from 'classnames'
 import { useRef } from 'react'
-import Loading from '../../shared/ui/Loading'
-import Error from '../../shared/ui/Error'
+import Loading from '@/shared/ui/Loading'
+import Error from '@/shared/ui/Error'
 
-const GameBlock = ({ title, queryParams }) => {
-  const { data, isLoading, error } = useGetGamesQuery({
-    ...queryParams,
-  })
+const GameBlock = ({ title, responce }) => {
   const refEl = useRef(null)
-  const games = data?.results ?? []
-  if (isLoading) return  <Loading />
-  if (error) return <Error />
+  const games = responce.data?.results ?? []
+  if (responce.isLoading) return <Loading />
+  if (responce.error) return <Error />
+  if (games.length === 0) return null
 
   const cardsBlock = cn({
     [styles.cardsBlock]: true,

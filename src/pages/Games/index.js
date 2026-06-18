@@ -1,3 +1,3 @@
-import Games from "./Games.jsx";
+import Games from './Games.jsx'
 
 export default Games

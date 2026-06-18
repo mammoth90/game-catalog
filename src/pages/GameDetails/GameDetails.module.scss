@@ -1,0 +1,149 @@
+@use '../../shared/styles/variables';
+@use 'sass:color';
+
+@keyframes shine {
+  0% {
+    transform: translateX(-150%) rotate(20deg);
+  }
+  100% {
+    transform: translateX(800%) rotate(20deg);
+  }
+}
+
+.page {
+  display: grid;
+  grid-template-rows: 400px 1fr;
+  overflow-y: hidden;
+}
+.head {
+  width: auto;
+  height: auto;
+  position: relative;
+  border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+  border-top: 1px solid rgb(255, 255, 255, 0.2);
+  overflow: hidden;
+  &:hover .badge {
+    transform: perspective(40px) rotateY(-15deg) rotateX(-5deg);
+  }
+  &:hover .wraper {
+    box-shadow: 0px 0px 40px 1px rgba(225, 255, 255, 0.4);
+    transform: perspective(1000px) rotateY(-15deg) rotateX(-3deg);
+    border: 1px solid rgb(255, 255, 255, 0.4);
+  }
+  &:hover .shine {
+    display: block;
+  }
+  &:hover .gameImg {
+    filter: contrast(1) brightness(1);
+  }
+}
+.titleContainer {
+  padding-left: 20px;
+  position: absolute;
+  width: 700px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  top: 30px;
+  height: 300px;
+}
+.tittle {
+  font-size: 70px;
+  color: color.scale(variables.$fontColor, $lightness: 50%);
+
+  text-shadow: -1px -1px 0 rgb(0, 0, 0, 0.6);
+}
+.img {
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  height: 100%;
+  overflow: hidden;
+  filter: contrast(0.7) brightness(0.7) blur(5px);
+  object-position: center -100px;
+  object-fit: cover;
+}
+.wraper {
+  position: absolute;
+  bottom: 80px;
+  width: 400px;
+  height: 225px;
+  right: 20px;
+  overflow: hidden;
+  transition:
+    transform 1s ease,
+    box-shadow 1s ease,
+    border 1s ease;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+}
+.gameImg {
+  width: 100%;
+  height: 100%;
+  filter: contrast(0.8) brightness(0.8);
+  object-fit: cover;
+  z-index: 16;
+  position: absolute;
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.shine {
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  inset: -50%;
+  z-index: 17;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shine 10s infinite;
+  display: none;
+}
+
+.body {
+  overflow: hidden;
+}
+
+.description {
+  text-align: justify;
+  padding: 10px 20px;
+  text-indent: 15px;
+}
+.badge {
+  position: absolute;
+  z-index: 20;
+  right: 20px;
+  bottom: 85px;
+  transition: transform 1s ease;
+}
+.details {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  left: 20px;
+  right: 20px;
+  bottom: 5px;
+  z-index: 15;
+}
+.released {
+  font-size: 0.9em;
+  padding: 0;
+}
+.achivesContainer {
+  bottom: 80px;
+  position: absolute;
+  z-index: 50;
+  width: auto;
+  height: auto;
+  transition: width 0.5s ease;
+}

@@ -1,0 +1,16 @@
+@use '../../styles/variables';
+.container {
+  height: 100%;
+  width: auto;
+  background-color: variables.$generalColor;
+  font-size: 0.8em;
+  padding: 2px 4px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 1px solid rgba(31, 115, 179, 0.9);
+  box-shadow: 1px 2px 8px 0px rgba(31, 115, 179, 0.6) inset;
+}
+.tittle {
+  padding-right: 2px;
+  border-right: 1px dotted rgb(255, 255, 255, 0.8);
+}

@@ -4,17 +4,18 @@ $value: 20%;
 $icoLightnes: 80%;
 
 .container {
-  padding-left: 10px;
   display: flex;
+  color: color.scale(variables.$fontColor, $lightness: $icoLightnes);
   gap: 4px;
 }
 .ico {
-  fill: color.scale(variables.$fontColor, $lightness: $icoLightnes);
+  fill: currentColor;
   height: 15px;
   width: auto;
 }
 .icoDiv {
   position: relative;
+  cursor: pointer;
   &:hover .platformsList {
     transform: scale(1);
     opacity: 1;
@@ -23,7 +24,7 @@ $icoLightnes: 80%;
 }
 .platformsList {
   transform: scale(0);
-  min-width: 10em;
+  min-width: 8em;
   list-style: none;
   opacity: 0;
   pointer-events: none;
@@ -32,11 +33,13 @@ $icoLightnes: 80%;
     transform 0.2s ease,
     opacity 0.2s ease;
   position: absolute;
-  padding: 5px 10px;
+  padding: 5px 0px;
   bottom: 1em;
+  z-index: 50;
   left: 0;
   background-color: color.scale(variables.$generalColor, $lightness: $value);
   border: 1px solid rgb(255, 255, 255, 0.2);
   border-radius: 0.5em;
   color: #ffff;
+  margin-right: 5px;
 }

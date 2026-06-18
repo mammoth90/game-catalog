@@ -1,0 +1,82 @@
+@use '../../shared/styles/variables';
+@use 'sass:color';
+
+.containerMain {
+  position: relative;
+}
+.container {
+  display: flex;
+  padding: 0 10px;
+  width: 100%;
+  overflow-y: auto;
+  height: 200px;
+  align-items: center;
+  gap: 5px;
+  background-color: variables.$generalColor;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+.screenShot {
+  border: 1px solid rgb(255, 255, 255, 0.1);
+  filter: contrast(0.8) brightness(0.9);
+  cursor: pointer;
+  display: block;
+  line-height: 0;
+  position: relative;
+  height: 180px;
+  width: auto;
+  transition:
+    border 0.5s ease,
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+  &:hover {
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    box-shadow: 0px 1px 6px 0px rgba(231, 234, 237, 0.9);
+    transform: scale(1.04);
+    z-index: 20;
+  }
+}
+.leftButtonDiv {
+  width: 50px;
+  cursor: pointer;
+  top: 10px;
+  z-index: 21;
+  left: 0;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  justify-content: right;
+  transition:
+    width 0.5s ease,
+    background-color 0.5s ease;
+  &:hover {
+    color: #ffffff;
+    border-right: 1px solid rgb(255, 255, 255, 0.2);
+    background-color: rgb(0, 0, 0, 0.4);
+    width: 70px;
+  }
+}
+.rightButtonDiv {
+  width: 50px;
+  cursor: pointer;
+  top: 10px;
+  z-index: 21;
+  right: 0;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  transition:
+    width 0.5s ease,
+    background-color 0.5s ease;
+  &:hover {
+    color: #ffffff;
+    border-left: 1px solid rgb(255, 255, 255, 0.2);
+    background-color: rgb(0, 0, 0, 0.4);
+    width: 70px;
+  }
+}

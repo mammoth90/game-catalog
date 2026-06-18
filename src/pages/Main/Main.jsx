@@ -1,5 +1,6 @@
-import GameBlock from "../../widgets/GameBlock"
+import GameBlock from '../../widgets/GameBlock'
 import styles from './Main.module.scss'
+import { useGetGamesQuery } from '@/services/api/reducer'
 
 const page_size = 10
 const topGameProps = {
@@ -19,7 +20,7 @@ const announcedGameProp = {
     ordering: '-released',
   },
 }
-const lastAddedGames = {
+const lastAddedGamesProps = {
   title: 'LAST ADDED GAMES',
   queryParams: {
     page: 1,
@@ -27,21 +28,19 @@ const lastAddedGames = {
     ordering: '-added',
   },
 }
+
 const Main = () => {
-   return (
+  const topGames = useGetGamesQuery({ ...topGameProps.queryParams })
+  const lastAddedGames = useGetGamesQuery({
+    ...lastAddedGamesProps.queryParams,
+  })
+  const announcedGame = useGetGamesQuery({ ...announcedGameProp.queryParams })
+  return (
     <div className={styles.main}>
-        <GameBlock
-          title={topGameProps.title}
-          queryParams={topGameProps.queryParams}
-        />
-        <GameBlock
-          title={lastAddedGames.title}
-          queryParams={lastAddedGames.queryParams}
-        />
-        <GameBlock
-          title={announcedGameProp.title}
-          queryParams={announcedGameProp.queryParams}
-        />
+      <GameBlock title={topGameProps.title} responce={topGames} />
+      <GameBlock title={lastAddedGamesProps.title} responce={lastAddedGames} />
+
+      <GameBlock title={announcedGameProp.title} responce={announcedGame} />
     </div>
   )
 }

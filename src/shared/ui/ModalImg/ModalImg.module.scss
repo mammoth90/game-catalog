@@ -1,0 +1,97 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0, 0, 0, 0.6);
+  z-index: 9990;
+}
+.imgContainer {
+  position: fixed;
+  line-height: 0;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9991;
+  border: 1px solid rgb(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.3);
+}
+.img {
+  height: auto;
+  width: 1220px;
+  object-fit: cover;
+}
+.buttonClose {
+  position: absolute;
+  cursor: pointer;
+  z-index: 9995;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  fill: rgb(255, 255, 255, 0.5);
+  transition: fill 0.5s ease;
+  &:hover {
+    fill: rgb(255, 255, 255, 0.8);
+    background-color: rgb(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+}
+.prevButtonContainer {
+  top: 0;
+  width: 70px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+  position: fixed;
+  z-index: 9994;
+  transition:
+    background-color 0.5s ease,
+    width 0.5s ease;
+  &:hover {
+    border-right: 1px solid rgb(255, 255, 255, 0.1);
+    color: #ffffff;
+    background-color: rgb(0, 0, 0, 0.2);
+    width: 100px;
+  }
+  &:hover svg {
+    fill: rgb(255, 255, 255, 0.7);
+  }
+}
+.buttonPrev {
+  width: 30px;
+  height: 30px;
+  fill: rgb(255, 255, 255, 0.3);
+}
+.nextButtonContainer {
+  width: 70px;
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  transition:
+    background-color 0.5s ease,
+    width 0.5s ease;
+  z-index: 9994;
+  &:hover {
+    border-left: 1px solid rgb(255, 255, 255, 0.1);
+    background-color: rgb(0, 0, 0, 0.2);
+    width: 100px;
+  }
+  &:hover svg {
+    fill: rgb(255, 255, 255, 0.7);
+  }
+}
+
+.buttonNext {
+  width: 30px;
+  fill: rgb(255, 255, 255, 0.3);
+  height: 30px;
+}

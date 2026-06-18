@@ -10,6 +10,7 @@ $butonHoveColor: 12%;
   padding-right: 1em;
   overflow: hidden;
   position: relative;
+  height: 450px;
 }
 .cardsBlock {
   display: flex;
@@ -44,7 +45,10 @@ $butonHoveColor: 12%;
   border-right: 1px solid rgb(255, 255, 255, 0.3);
   border-bottom-right-radius: 1em;
   &:hover {
-  background-color: color.scale(variables.$generalColor, $lightness: $butonHoveColor);
+    background-color: color.scale(
+      variables.$generalColor,
+      $lightness: $butonHoveColor
+    );
   }
 }
 .buttonRight {
@@ -60,6 +64,9 @@ $butonHoveColor: 12%;
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
   &:hover {
-  background-color: color.scale(variables.$generalColor, $lightness: $butonHoveColor);
+    background-color: color.scale(
+      variables.$generalColor,
+      $lightness: $butonHoveColor
+    );
   }
 }

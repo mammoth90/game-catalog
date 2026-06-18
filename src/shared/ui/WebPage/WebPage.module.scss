@@ -1,0 +1,17 @@
+@use 'sass:color';
+$color: #2f4f4f;
+
+.container {
+  font-size: 0.8em;
+  border: 1px solid color.scale($color, $lightness: -30%);
+  padding: 1px 3px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: $color;
+  transition: background-color 0.5s ease;
+  &:hover {
+    background-color: color.scale($color, $lightness: 10%);
+    border: 1px solid color.scale($color, $lightness: -10%);
+  }
+}

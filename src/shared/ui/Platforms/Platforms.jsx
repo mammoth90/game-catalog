@@ -1,7 +1,7 @@
 import ListOfPlatforms from './ListOfPlatforms'
 import styles from './Platfroms.module.scss'
 
-import  Playstation  from './assets/playstation.svg?react'
+import Playstation from './assets/playstation.svg?react'
 import Xbox from './assets/xbox.svg?react'
 import Nintendo from './assets/nintendo.svg?react'
 import Android from './assets/android.svg?react'
@@ -61,6 +61,7 @@ const platformsCollection = [
   },
 ]
 const Platforms = ({ platforms }) => {
+  if (!platforms) return null
   const availablePlatforms = platforms.reduce((acc, p) => {
     acc[p.platform.slug] = [p.platform.name, p.platform.id]
     return acc

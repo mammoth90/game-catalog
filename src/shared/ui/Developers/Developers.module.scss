@@ -1,0 +1,15 @@
+@use '../../styles/variables';
+
+$value: rgb(255, 255, 255, 0.8);
+.container {
+  height: 100%;
+  color: $value;
+  background-color: variables.$generalColor;
+  box-sizing: border-box;
+  width: auto;
+  font-size: 0.8em;
+  padding: 1px 3px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 1px solid $value;
+}
