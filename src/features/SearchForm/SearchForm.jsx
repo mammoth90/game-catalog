@@ -26,8 +26,7 @@ const SearchForm = () => {
     [styles.buttonInput]: true,
   })
   return (
-    <div className={styles.container}>
-      <form onSubmit={hadleSubmit}>
+      <form onSubmit={hadleSubmit} className={styles.container}>
         <input
           type="text"
           className={textInput}
@@ -41,7 +40,6 @@ const SearchForm = () => {
           Search
         </button>
       </form>
-    </div>
   )
 }
 

@@ -31,7 +31,7 @@ $value: 3%;
   transition: filter 0.5s ease;
 }
 .cardTitle {
-  font-size: 0.9rem;
+  font-size: 15px;
   padding-left: 10px;
   font-weight: bold;
   white-space: nowrap;
@@ -61,5 +61,37 @@ $value: 3%;
   flex-direction: row;
   & > * {
     padding-left: 2px;
+  }
+}
+
+@media (max-width : 1400px) {
+  .gameCard {
+    flex: 0 0 250px;
+  }
+  .cardTitle {
+    font-size: 13px;
+  }
+}
+@media (max-width : 1200px) {
+  .gameCard {
+    height: 325px;
+  }
+}
+@media (max-width : 992px) {
+  .gameCard {
+    height: 300px;
+    flex: 0 0 200px;
+  }
+  .gameCard {
+    font-size: 12px;
+  }
+}
+@media (max-width : 768px) {
+  .gameCard {
+    height: 250px;
+    flex: 0 0 150px;
+  }
+  .gameCard {
+    font-size: 10px;
   }
 }

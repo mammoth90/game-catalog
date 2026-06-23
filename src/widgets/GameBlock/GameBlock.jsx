@@ -23,7 +23,14 @@ const GameBlock = ({ title, responce }) => {
   const container = cn({
     [styles.container]: true,
   })
-
+  const leftButtonClass = cn({
+    [styles.baseButtonClass]: true,
+    [styles.buttonLeft]: true,
+  })
+ const RightButtonClass = cn({
+    [styles.baseButtonClass]: true,
+    [styles.buttonRight]: true,
+  })
   const scroll = (dir) => {
     const step = dir === 'left' ? -300 : 300
     if (refEl.current) {
@@ -36,7 +43,7 @@ const GameBlock = ({ title, responce }) => {
   return (
     <div className={container}>
       <p className={blockTitle}>{title}</p>
-      <button className={styles.buttonLeft} onClick={() => scroll('left')}>
+      <button className={leftButtonClass} onClick={() => scroll('left')}>
         <Left />
       </button>
       <div className={cardsBlock} ref={refEl}>
@@ -45,7 +52,7 @@ const GameBlock = ({ title, responce }) => {
         ))}
       </div>
 
-      <button className={styles.buttonRight} onClick={() => scroll('right')}>
+      <button className={RightButtonClass} onClick={() => scroll('right')}>
         <Right />
       </button>
     </div>

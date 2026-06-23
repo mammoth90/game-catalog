@@ -95,3 +95,27 @@
   fill: rgb(255, 255, 255, 0.3);
   height: 30px;
 }
+@media (max-width: 1400px) {
+  .img {
+  width: 998px;
+  }
+}
+@media (max-width: 998px) {
+  .img {
+    width: 650px;
+  }
+}
+@media (max-width: 768px) {
+  .img {
+    width: 500px;
+  }
+}
+@media (max-width: 600px) {
+  .imgContainer {
+    display: none;
+  }
+  .overlay {
+    display: none;
+  }
+
+}

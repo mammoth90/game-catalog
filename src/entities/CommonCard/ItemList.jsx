@@ -6,7 +6,6 @@ const ItemList = ({ data }) => {
   const [isActive, setActive] = useState(false)
 
   useEffect(() => {
-    console.log('Current state:', isActive)
   }, [isActive])
 
   const containerClass = cn({

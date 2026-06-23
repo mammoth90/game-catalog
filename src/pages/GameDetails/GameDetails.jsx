@@ -19,6 +19,8 @@ import WebPage from '@/shared/ui/WebPage'
 import Achivments from '@/widgets/Achivments'
 import { useEffect, useState } from 'react'
 import GameBlock from '@/widgets/GameBlock/GameBlock'
+import cn from 'classnames'
+import noImage from './assets/no-img-head.png'
 
 const GameDetails = () => {
   const { id } = useParams()
@@ -26,8 +28,7 @@ const GameDetails = () => {
   const [getAchivments] = useLazyGetAchivmentsQuery()
   const [achivments, setAchivments] = useState([])
   const dlcGames = useGetDlsQuery(id)
-
-  useEffect(() => {
+   useEffect(() => {
     const load = async () => {
       let achivs = []
 
@@ -46,6 +47,18 @@ const GameDetails = () => {
 
   if (isLoading) return <Loading />
   if (error) return <Error />
+    const headImgClass = cn({
+      [styles.img]: true,
+      [styles.withImage]: data.background_image_additional
+    })
+ const GameImage = (
+        <div className={styles.wraper}>
+          <div className={styles.shine} />
+           <img src={data.background_image} className={styles.gameImg} /> 
+        </div>
+  )
+  const renderImg = data.background_image ? GameImage : null
+  const headImgSrc = data.background_image_additional ? data.background_image_additional :  noImage
   return (
     <div className={styles.page}>
       <div className={styles.head}>
@@ -65,11 +78,8 @@ const GameDetails = () => {
           <Developers developers={data.developers} />
           <WebPage url={data.website} />
         </div>
-        <img src={data.background_image_additional} className={styles.img} />
-        <div className={styles.wraper}>
-          <div className={styles.shine} />
-          <img src={data.background_image} className={styles.gameImg} />
-        </div>
+        <img src={headImgSrc} className={headImgClass} />
+        {renderImg}
       </div>
       <div className={styles.body}>
         <p className={styles.description}> {data.description_raw} </p>

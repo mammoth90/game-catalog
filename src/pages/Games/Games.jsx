@@ -83,7 +83,6 @@ const Games = () => {
   if (isLoading) return <Loading />
   if (isError) return <Error />
   if (!isFetching && games.length === 0) return 'no results'
-  console.log('GAMES', games)
 
   return (
     <div className={styles.main}>

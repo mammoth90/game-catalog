@@ -5,12 +5,11 @@
   width: 100%;
   top: 0;
   left: 0;
-  padding: 20px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  gap: 20px;
+  flex-wrap: nowrap;
 }
 .base {
   background: color.scale(variables.$generalColor, $lightness: 5%);
@@ -23,7 +22,7 @@
   border: 1px solid rgb(255, 255, 255, 0.2);
 }
 .textInput {
-  width: 900px;
+  width: 800px;
   padding: 10px 10px;
   box-sizing: border-box;
 }
@@ -35,5 +34,42 @@
   &:hover {
     box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.2);
     border: 1px solid rgb(255, 255, 255, 0.2);
+  }
+}
+@media (max-width: 1200px) {
+  .textInput {
+    width: 600px;
+    font-size: 15px;
+  }
+  .buttonInput {
+    width: 75px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 992px) {
+  .textInput {
+    width: 450px;
+    font-size: 12px;
+  }
+  .buttonInput {
+    width: 75px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .textInput {
+    width: 300px;
+  }
+  .buttonInput {
+    width: 60px;
+  }
+}
+@media (max-width: 576px) {
+  .textInput {
+    min-width: 250px;
+  }
+  .buttonInput {
+    font-size: 10px;
+    min-width: 60px;
   }
 }

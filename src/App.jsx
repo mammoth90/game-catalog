@@ -7,6 +7,8 @@ import Games from './pages/Games'
 import GameDetails from './pages/GameDetails'
 import SearchForm from './features/SearchForm'
 import Developers from './pages/Developers'
+import ShadowMenu from './widgets/ShadowMenu'
+import littleLogo from '@/assets/logo_adapted.png'
 
 const menuProps = [
   {
@@ -19,11 +21,11 @@ const menuProps = [
     name: 'GAMES',
     link: '/games',
   },
-  {
-    id: 3,
-    name: 'DEVELOPERS',
-    link: '/developers',
-  },
+  // {
+  //   id: 3,
+  //   name: 'DEVELOPERS',
+  //   link: '/developers',
+  // },
 ]
 
 const searchData = 'diablo'
@@ -40,7 +42,11 @@ function App() {
         </aside>
         <main className={styles.main}>
           <div className={styles.searchForm}>
+    <img className={styles.littleLogo} src={littleLogo} />
             <SearchForm />
+    <div className={styles.shadowMenu}>
+          <ShadowMenu  props={menuProps} />     
+    </div>
           </div>
           <div className={styles.pages}>
             <Routes>

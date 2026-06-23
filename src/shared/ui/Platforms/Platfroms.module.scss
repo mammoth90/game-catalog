@@ -34,7 +34,7 @@ $icoLightnes: 80%;
     opacity 0.2s ease;
   position: absolute;
   padding: 5px 0px;
-  bottom: 1em;
+  bottom: 20px;
   z-index: 50;
   left: 0;
   background-color: color.scale(variables.$generalColor, $lightness: $value);
