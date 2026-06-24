@@ -1,1 +1,1 @@
-Web-site link: https://game-catalog-rawg.vercel.app/ 
+Web-site link: https://rawg-game-catalog.vercel.app/
